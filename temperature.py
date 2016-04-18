@@ -1,7 +1,7 @@
 """
-Temperature sensing and API 
+Temperature sensing and API
 
-- Thanks to ModMyPi's tutorial - http://www.modmypi.com/blog/ds18b20-one-wire-digital-temperature-sensor-and-the-raspberry-pi as a basis for the code. 
+- Thanks to ModMyPi's tutorial - http://www.modmypi.com/blog/ds18b20-one-wire-digital-temperature-sensor-and-the-raspberry-pi as a basis for the code.
 
 Copyright (c) 2016, Tim Fernando
 All rights reserved.
@@ -64,7 +64,7 @@ def read_temperature(device):
     # 2. Make sure the response has at least 2 lines
     # 3. Make sure the first line has a "YES" at the end
     while not lines and len(lines) < 2 and lines[0].strip()[-3:] != 'YES':
-        # If we haven't got a valid response, wait for the WAIT_INTERVAL 
+        # If we haven't got a valid response, wait for the WAIT_INTERVAL
         # (seconds) and try again.
         time.sleep(WAIT_INTERVAL)
         lines = raw_temperature()
@@ -72,7 +72,7 @@ def read_temperature(device):
     # Split out the raw temperature number
     temperature = lines[1].split('t=')[1]
 
-    # Check that the temperature is not invalid    
+    # Check that the temperature is not invalid
     if temperature != -1:
         temperature_celcius = float(temperature) / 1000.0
         temperature_fahrenheit = (temperature_celcius * 1.8) + 32.0
