@@ -13,7 +13,7 @@ from os import system, listdir
 import sys
 import time
 
-from flask import Flask
+from flask import Flask, jsonify
 
 DEVICE_FOLDER = "/sys/bus/w1/devices/"
 DEVICE_SUFFIX = "/w1_slave"
@@ -26,7 +26,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def temperature():
-    return "Hello world!"
+    device = guess_temperature_sensor()
+    return jsonify(read_temperature(device))
 
 
 def guess_temperature_sensor():
