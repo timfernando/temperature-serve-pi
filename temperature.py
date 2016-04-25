@@ -88,7 +88,3 @@ def read_temperature(device):
 
 if __name__ == "__main__":
     app.run()
-    device = guess_temperature_sensor()
-    while device:
-        print read_temperature(device)
-        time.sleep(1)
