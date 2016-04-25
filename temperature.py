@@ -13,6 +13,7 @@ Licensed under the BSD 2 Clause License
 
 import sys
 import time
+from datetime import datetime
 from os import listdir, system
 
 from flask import Flask, jsonify
@@ -30,6 +31,7 @@ app = Flask(__name__)
 @app.route("/")
 def temperature():
     device = guess_temperature_sensor()
+    print datetime.now(), "Request received"
     return jsonify(read_temperature(device))
 
 
