@@ -42,7 +42,7 @@ def guess_temperature_sensor():
     devices = listdir(DEVICE_FOLDER)
     devices = [device for device in devices if device.startswith('28-')]
     if devices:
-        print "Found", len(devices), "devices which maybe temperature sensors."
+        # print "Found", len(devices), "devices which maybe temperature sensors."
         return DEVICE_FOLDER + devices[0] + DEVICE_SUFFIX
     else:
         sys.exit("Sorry, no temperature sensors found")
