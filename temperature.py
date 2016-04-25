@@ -20,6 +20,7 @@ from flask import Flask, jsonify
 
 DEVICE_FOLDER = "/sys/bus/w1/devices/"
 DEVICE_SUFFIX = "/w1_slave"
+WAIT_INTERVAL = 0.2
 
 system('modprobe w1-gpio')
 system('modprobe w1-therm')
