@@ -83,10 +83,10 @@ def read_temperature(device):
 
     # Check that the temperature is not invalid
     if temperature != -1:
-        temperature_celcius = round(float(temperature) / 1000.0, 1)
-        temperature_fahrenheit = round((temperature_celcius * 1.8) + 32.0, 1)
+        temperature_celsius = round(float(temperature) / 1000.0, 1)
+        temperature_fahrenheit = round((temperature_celsius * 1.8) + 32.0, 1)
 
-    response = {'celcius': temperature_celcius,
+    response = {'celsius': temperature_celsius,
                 'fahrenheit': temperature_fahrenheit}
     return response
 
