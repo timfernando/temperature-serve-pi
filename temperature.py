@@ -17,15 +17,18 @@ from datetime import datetime
 from os import listdir, system
 
 from flask import Flask, jsonify
+from flask.ext.cors import CORS
 
 DEVICE_FOLDER = "/sys/bus/w1/devices/"
 DEVICE_SUFFIX = "/w1_slave"
 WAIT_INTERVAL = 0.2
 
+ALLOWABLE_ORIGINS = ["https://freeboard.io"]
 system('modprobe w1-gpio')
 system('modprobe w1-therm')
 
 app = Flask(__name__)
+cors_app = CORS(app, resources={r"/*": {"origins": ALLOWABLE_ORIGINS}})
 
 
 @app.route("/")
@@ -89,4 +92,4 @@ def read_temperature(device):
 
 
 if __name__ == "__main__":
-    app.run()
+    cors_app.run()
