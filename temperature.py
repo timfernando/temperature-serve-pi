@@ -11,10 +11,9 @@ Licensed under the BSD 2 Clause License
 - https://opensource.org/licenses/BSD-2-Clause
 """
 
-from os import system, listdir
-
 import sys
 import time
+from os import listdir, system
 
 from flask import Flask, jsonify
 
