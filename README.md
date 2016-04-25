@@ -1,5 +1,5 @@
 
-## Temperature serve pi
+## Temperature serve Pi
 
 This repository contains a Python Flask project to read temperature readings from a DS18B20 one wire digital thermometer hooked up to a Raspberry Pi and making the reading available in Celcius and Fahrenheit via a lightweight API.
 
