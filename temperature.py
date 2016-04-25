@@ -1,11 +1,14 @@
 """
 Temperature sensing and API
 
-- Thanks to ModMyPi's tutorial - http://www.modmypi.com/blog/ds18b20-one-wire-digital-temperature-sensor-and-the-raspberry-pi as a basis for the code.
+Thanks to ModMyPi's tutorial as a basis for the code.
+- http://www.modmypi.com/blog/ds18b20-one-wire-digital-temperature-sensor-and-the-raspberry-pi
+
 
 Copyright (c) 2016, Tim Fernando
 All rights reserved.
-Licensed under the BSD 2 Clause License - https://opensource.org/licenses/BSD-2-Clause
+Licensed under the BSD 2 Clause License
+- https://opensource.org/licenses/BSD-2-Clause
 """
 
 from os import system, listdir
@@ -23,6 +26,7 @@ system('modprobe w1-gpio')
 system('modprobe w1-therm')
 
 app = Flask(__name__)
+
 
 @app.route("/")
 def temperature():
@@ -89,6 +93,3 @@ if __name__ == "__main__":
     while device:
         print read_temperature(device)
         time.sleep(1)
-
-
-
